@@ -1,0 +1,36 @@
+<?php include 'header.php'; ?>
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-success">Tuntunan Tata Cara Sholat</h1>
+        <p class="lead text-muted">Sesuai Sunnah Rasulullah (HPT Muhammadiyah)</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+        <div class="col-md-5 col-sm-12">
+            <div class="card h-100 shadow border-0 text-center">
+                <div class="card-body py-5">
+                    <div class="display-3 text-primary mb-3">👨‍💼</div>
+                    <h3 class="card-title fw-bold">Mode Dewasa</h3>
+                    <p class="card-text text-muted">Penyajian lengkap, formal, beserta keterangan sumber teks yang valid.</p>
+                    <a href="daftar_gerakan.php?kategori=1" class="btn btn-primary btn-lg px-4 rounded-pill">Masuk Mode Dewasa</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+            <div class="card h-100 shadow border-0 text-center">
+                <div class="card-body py-5">
+                    <div class="display-3 text-warning mb-3">👦</div>
+                    <h3 class="card-title fw-bold">Mode Anak-Anak</h3>
+                    <p class="card-text text-muted">Bahasa yang lebih sederhana dengan visual yang ramah anak.</p>
+                    <a href="daftar_gerakan.php?kategori=2" class="btn btn-warning btn-lg px-4 rounded-pill text-white">Masuk Mode Anak</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
