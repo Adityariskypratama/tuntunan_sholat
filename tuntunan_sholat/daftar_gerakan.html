@@ -11,9 +11,14 @@
         .header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #eef2f5; padding-bottom: 15px; }
         .header h2 { color: #27ae60; font-size: 22px; }
         .back-btn { display: inline-block; margin-bottom: 15px; color: #27ae60; text-decoration: none; font-weight: bold; font-size: 14px; }
-        .card { background: #fafafa; border: 1px solid #e2e8f0; border-left: 5px solid #27ae60; padding: 18px; margin-bottom: 20px; border-radius: 8px; }
-        .card h3 { color: #2c3e50; font-size: 18px; margin-bottom: 8px; }
-        .arabic { font-size: 24px; text-align: right; margin: 12px 0; font-family: 'Traditional Arabic', serif; color: #000; direction: rtl; }
+        
+        .card { background: #fafafa; border: 1px solid #e2e8f0; border-left: 5px solid #27ae60; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: left; }
+        .card h3 { color: #2c3e50; font-size: 18px; margin-bottom: 12px; }
+        
+        .img-container { text-align: center; margin: 15px 0; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #eee; }
+        .img-container img { width: 100%; max-width: 180px; height: auto; border-radius: 6px; }
+
+        .arabic { font-size: 24px; text-align: right; margin: 12px 0; font-family: 'Traditional Arabic', 'Amiri', serif; color: #000; direction: rtl; }
         .latin { font-style: italic; color: #4a5568; font-size: 14px; margin-bottom: 4px; }
         .artinya { font-size: 13px; color: #718096; }
     </style>
@@ -31,6 +36,9 @@
         <!-- 1. Niat & Takbir -->
         <div class="card">
             <h3>1. Niat & Takbiratul Ihram</h3>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1590076175571-4b5459efb08c?w=400&auto=format&fit=crop&q=60" alt="Takbiratul Ihram">
+            </div>
             <p>Berdiri tegak menghadap kiblat, berniat di dalam hati, lalu mengangkat kedua tangan sejajar bahu/telinga seraya membaca:</p>
             <div class="arabic">اللهُ أَكْبَرُ</div>
             <p class="latin"><strong>Lafaz:</strong> Allāhu Akbar</p>
@@ -39,8 +47,11 @@
 
         <!-- 2. Doa Iftitah -->
         <div class="card">
-            <h3>2. Doa Iftitah</h3>
-            <p>Bersedekap di atas dada, lalu membaca doa iftitah berikut:</p>
+            <h3>2. Doa Iftitah (Bersedekap)</h3>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1584286595398-a59f21d313f5?w=400&auto=format&fit=crop&q=60" alt="Bersedekap">
+            </div>
+            <p>Meletakkan tangan kanan di atas tangan kiri di atas dada, lalu membaca doa iftitah berikut:</p>
             <div class="arabic">اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ</div>
             <p class="latin"><strong>Lafaz:</strong> Allāhumma bā‘id bainī wa baina khaṭāyāya kamā bā‘adta bainal-masyriqi wal-magrib.</p>
             <p class="artinya"><strong>Artinya:</strong> "Ya Allah, jauhkanlah antara aku dan kesalahanku sebagaimana Engkau menjauhkan antara timur dan barat."</p>
@@ -49,6 +60,9 @@
         <!-- 3. Ruku -->
         <div class="card">
             <h3>3. Ruku'</h3>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1543702404-f3a749eb4031?w=400&auto=format&fit=crop&q=60" alt="Ruku">
+            </div>
             <p>Membungkukkan badan hingga punggung lurus, memegang lutut dengan jari merenggang, membaca:</p>
             <div class="arabic">سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي</div>
             <p class="latin"><strong>Lafaz:</strong> Subḥānakallāhumma rabbanā wa biḥamdikallāhummagfir lī.</p>
@@ -58,6 +72,9 @@
         <!-- 4. Sujud -->
         <div class="card">
             <h3>4. Sujud</h3>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?w=400&auto=format&fit=crop&q=60" alt="Sujud">
+            </div>
             <p>Meletakkan dahi, hidung, telapak tangan, lutut, dan ujung jari kaki di lantai, membaca:</p>
             <div class="arabic">سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي</div>
             <p class="latin"><strong>Lafaz:</strong> Subḥānakallāhumma rabbanā wa biḥamdikallāhummagfir lī.</p>
@@ -67,6 +84,9 @@
         <!-- 5. Salam -->
         <div class="card">
             <h3>5. Salam</h3>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&auto=format&fit=crop&q=60" alt="Salam">
+            </div>
             <p>Menoleh ke kanan dan ke kiri seraya mengucapkan:</p>
             <div class="arabic">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
             <p class="latin"><strong>Lafaz:</strong> Assalāmu ‘alaikum wa raḥmatullāhi wa barakātuh.</p>
