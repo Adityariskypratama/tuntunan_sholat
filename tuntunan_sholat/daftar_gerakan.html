@@ -1,53 +1,79 @@
-<?php 
-include 'header.php'; 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Gerakan Sholat - Mode Dewasa</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; padding: 20px; line-height: 1.6; }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #eef2f5; padding-bottom: 15px; }
+        .header h2 { color: #27ae60; font-size: 22px; }
+        .back-btn { display: inline-block; margin-bottom: 15px; color: #27ae60; text-decoration: none; font-weight: bold; font-size: 14px; }
+        .card { background: #fafafa; border: 1px solid #e2e8f0; border-left: 5px solid #27ae60; padding: 18px; margin-bottom: 20px; border-radius: 8px; }
+        .card h3 { color: #2c3e50; font-size: 18px; margin-bottom: 8px; }
+        .arabic { font-size: 24px; text-align: right; margin: 12px 0; font-family: 'Traditional Arabic', serif; color: #000; direction: rtl; }
+        .latin { font-style: italic; color: #4a5568; font-size: 14px; margin-bottom: 4px; }
+        .artinya { font-size: 13px; color: #718096; }
+    </style>
+</head>
+<body>
 
-// Ambil parameter kategori dari URL (1 = Dewasa, 2 = Anak)
-$id_kategori = isset($_GET['kategori']) ? intval($_GET['kategori']) : 1;
-
-// Ambil nama kategori untuk judul
-$query_kat = mysqli_query($conn, "SELECT nama FROM kategori WHERE id = $id_kategori");
-$data_kat = mysqli_fetch_assoc($query_kat);
-$nama_kategori = isset($data_kat['nama']) ? $data_kat['nama'] : 'Dewasa';
-
-// Ambil data gerakan sholat dari database secara urut (F-01 & F-09)
-$query_gerakan = mysqli_query($conn, "SELECT * FROM gerakan WHERE id_kategori = $id_kategori ORDER BY urutan ASC");
-?>
-
-<div class="container my-4">
-    <a href="index.php" class="btn btn-outline-secondary mb-4 rounded-pill">← Kembali ke Beranda</a>
-
-    <div class="text-center mb-4">
-        <h2 class="fw-bold text-success">Daftar Gerakan Sholat</h2>
-        <span class="badge bg-<?= $id_kategori == 1 ? 'primary' : 'warning'; ?> fs-6 rounded-pill px-3 py-2">
-            Mode <?= $nama_kategori; ?>
-        </span>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="list-group shadow-sm">
-                <?php 
-                if (mysqli_num_rows($query_gerakan) > 0) {
-                    while ($row = mysqli_fetch_assoc($query_gerakan)) {
-                ?>
-                    <a href="detail_gerakan.php?id=<?= $row['id']; ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
-                        <div>
-                            <span class="fw-bold text-success me-2"><?= $row['urutan']; ?>.</span>
-                            <span class="fw-semibold"><?= $row['nama']; ?></span>
-                        </div>
-                        <span class="text-muted small">Lihat Detail →</span>
-                    </a>
-                <?php 
-                    }
-                } else {
-                    echo '<div class="alert alert-info text-center">Data gerakan sholat belum diisi di database phpMyAdmin.</div>';
-                }
-                ?>
-            </div>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Kembali ke Halaman Utama</a>
+        
+        <div class="header">
+            <h2>📋 Tuntunan & Bacaan Sholat Lengkap</h2>
+            <p>Panduan tata cara sholat sesuai HPT Muhammadiyah</p>
         </div>
-    </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- 1. Niat & Takbir -->
+        <div class="card">
+            <h3>1. Niat & Takbiratul Ihram</h3>
+            <p>Berdiri tegak menghadap kiblat, berniat di dalam hati, lalu mengangkat kedua tangan sejajar bahu/telinga seraya membaca:</p>
+            <div class="arabic">اللهُ أَكْبَرُ</div>
+            <p class="latin"><strong>Lafaz:</strong> Allāhu Akbar</p>
+            <p class="artinya"><strong>Artinya:</strong> "Allah Maha Besar."</p>
+        </div>
+
+        <!-- 2. Doa Iftitah -->
+        <div class="card">
+            <h3>2. Doa Iftitah</h3>
+            <p>Bersedekap di atas dada, lalu membaca doa iftitah berikut:</p>
+            <div class="arabic">اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ</div>
+            <p class="latin"><strong>Lafaz:</strong> Allāhumma bā‘id bainī wa baina khaṭāyāya kamā bā‘adta bainal-masyriqi wal-magrib.</p>
+            <p class="artinya"><strong>Artinya:</strong> "Ya Allah, jauhkanlah antara aku dan kesalahanku sebagaimana Engkau menjauhkan antara timur dan barat."</p>
+        </div>
+
+        <!-- 3. Ruku -->
+        <div class="card">
+            <h3>3. Ruku'</h3>
+            <p>Membungkukkan badan hingga punggung lurus, memegang lutut dengan jari merenggang, membaca:</p>
+            <div class="arabic">سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي</div>
+            <p class="latin"><strong>Lafaz:</strong> Subḥānakallāhumma rabbanā wa biḥamdikallāhummagfir lī.</p>
+            <p class="artinya"><strong>Artinya:</strong> "Maha Suci Engkau ya Allah, Tuhan kami, dan dengan memuji-Mu ya Allah, ampunilah aku."</p>
+        </div>
+
+        <!-- 4. Sujud -->
+        <div class="card">
+            <h3>4. Sujud</h3>
+            <p>Meletakkan dahi, hidung, telapak tangan, lutut, dan ujung jari kaki di lantai, membaca:</p>
+            <div class="arabic">سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي</div>
+            <p class="latin"><strong>Lafaz:</strong> Subḥānakallāhumma rabbanā wa biḥamdikallāhummagfir lī.</p>
+            <p class="artinya"><strong>Artinya:</strong> "Maha Suci Engkau ya Allah, Tuhan kami, dan dengan memuji-Mu ya Allah, ampunilah aku."</p>
+        </div>
+
+        <!-- 5. Salam -->
+        <div class="card">
+            <h3>5. Salam</h3>
+            <p>Menoleh ke kanan dan ke kiri seraya mengucapkan:</p>
+            <div class="arabic">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
+            <p class="latin"><strong>Lafaz:</strong> Assalāmu ‘alaikum wa raḥmatullāhi wa barakātuh.</p>
+            <p class="artinya"><strong>Artinya:</strong> "Semoga keselamatan, rahmat Allah, dan berkah-Nya tercurah kepada kalian."</p>
+        </div>
+
+    </div>
+
 </body>
 </html>
